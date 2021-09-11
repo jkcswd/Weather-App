@@ -7,7 +7,7 @@ const fetchWeatherData = async city => {
       { mode: 'cors' }
       );
     const dataPromise =  await response.json();
-    console.log(dataPromise);
+    
     return dataPromise
   } catch (err) {
     console.log(err);
@@ -18,7 +18,6 @@ const weatherDataProcess =  async data => {
 
   const weatherData = await data;
 
-  console.log(weatherData);
   let weatherObject = {
     description: weatherData.weather[0].description,
     temp: weatherData.main.temp,
@@ -29,8 +28,16 @@ const weatherDataProcess =  async data => {
     humidity: weatherData.main.humidity,
     windSpeed: weatherData.wind.speed
   };
-  console.log(weatherObject);
   return weatherObject
 }
 
+const fetchUserWeather = () => {
+  const button = document.querySelector('button')
+  const input = document.querySelector('input')
+
+  button.addEventListener('click', () => {
+    weatherDataProcess(fetchWeatherData(input.value));
+
+  })
+}
 weatherDataProcess(fetchWeatherData('london'));
