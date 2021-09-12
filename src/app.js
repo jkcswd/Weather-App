@@ -8,7 +8,6 @@ const fetchWeatherData = async city => {//works
       );
     const dataPromise =  await response.json();
 
-    console.log(dataPromise);
     return dataPromise
   } catch (err) {
     console.log(err);
@@ -29,7 +28,6 @@ const weatherDataProcess =  async data => { //works
       windSpeed: weatherData.wind.speed
     };
 
-    console.log(weatherObject);
     return weatherObject
 
   } catch (err) {
@@ -38,12 +36,11 @@ const weatherDataProcess =  async data => { //works
   
 }
 
-const userWeatherListener = () => { //does not work
+const userWeatherListener = () => {
   const button = document.querySelector('button');
   const input = document.querySelector('input');
 
   button.addEventListener('click', async (e) => {
-    if (!e.isTrusted) return // do nothing for second click
     try {
       e.preventDefault();
       console.log(input.value);
@@ -52,13 +49,11 @@ const userWeatherListener = () => { //does not work
       const processedData = await weatherDataProcess(apiData);
   
       console.log(processedData);
-      button.click();
-      
+
     } catch(err) {
       console.error(err) 
     }
   })
 }
 
-weatherDataProcess(fetchWeatherData('london')); //works
 userWeatherListener(); //does not work?How?
