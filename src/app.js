@@ -28,7 +28,7 @@ const weatherDataProcess =  async data => { //works
       humidity: weatherData.main.humidity,
       windSpeed: weatherData.wind.speed
     };
-    
+
     console.log(weatherObject);
     return weatherObject
 
@@ -40,14 +40,23 @@ const weatherDataProcess =  async data => { //works
 
 const userWeatherListener = () => { //does not work
   const button = document.querySelector('button');
+  const input = document.querySelector('input');
 
-  button.addEventListener('click', async () => {
-    const input = document.querySelector('input');
-    console.log(input.value);
-    const apiData = await fetchWeatherData(input.value);
-    const processedData = await weatherDataProcess(apiData);
+  button.addEventListener('click', async (e) => {
+    if (!e.isTrusted) return // do nothing for second click
+    try {
+      e.preventDefault();
+      console.log(input.value);
 
-    console.log(processedData);
+      const apiData = await fetchWeatherData(input.value);
+      const processedData = await weatherDataProcess(apiData);
+  
+      console.log(processedData);
+      button.click();
+      
+    } catch(err) {
+      console.error(err) 
+    }
   })
 }
 
