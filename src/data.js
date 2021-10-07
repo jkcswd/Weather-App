@@ -18,6 +18,7 @@ const weatherDataProcess =  async data => {
   try {
     const weatherData = await data;
     let weatherObject = {
+      main: weatherData.weather[0].main,
       description: weatherData.weather[0].description,
       temp: weatherData.main.temp,
       feelTemp: weatherData.main.feels_like,
