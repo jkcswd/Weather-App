@@ -25,7 +25,6 @@ const userWeatherListener = () => {
   button.addEventListener('click', async (e) => {
     try {
       e.preventDefault();//allows async code to execute as default behaviour 
-      console.log(input.value);
 
       const apiData = await fetchWeatherData(input.value);
       const processedData = await weatherDataProcess(apiData);
