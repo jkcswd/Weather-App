@@ -30,3 +30,11 @@ body {
 
    font-size: 20px;
  }
+
+ .display {
+   text-align: center;
+
+   border: 1px black solid;
+   margin: 5px;
+   border-radius: 5px;
+ }
