@@ -25,7 +25,7 @@ const renderDisplay = (processedData) => {
   display.innerHTML = '';
   displayDiv.innerHTML = `
   <i class="wi ${iconLookupTable[processedData.main]}" style="font-size:100px"></i>
-  <p>Weather: ${processedData.description}<p/>
+  <p>${processedData.description}<p/>
   <p>Temperature: ${processedData.temp}<p/>
   <p>Feels like: ${processedData.feelTemp}<p/>
   <p>High: ${processedData.maxTemp}<p/>
