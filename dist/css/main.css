@@ -60,6 +60,12 @@ body {
    border-radius: 20px;
 
    font-size: 20px;
+
+   transition: 0.3s;
+ }
+
+ .content:hover {
+   scale: 1.05;
  }
 
  .display {
