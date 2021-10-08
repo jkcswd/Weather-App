@@ -3,7 +3,7 @@ import apiKey from "./secrets";
 const fetchWeatherData = async city => {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`, 
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`, 
       { mode: 'cors' }
       );
     const dataPromise =  await response.json();
