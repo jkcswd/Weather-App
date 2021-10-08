@@ -37,6 +37,15 @@ const renderDisplay = (processedData) => {
   display.appendChild(displayDiv);
 }
 
+const renderError = () => {
+  const display = document.querySelector('.display');
+  const displayDiv = document.createElement('div');
+
+  display.innerHTML = '';
+  displayDiv.innerHTML = 'We could not find that location. Please try again.';
+  display.appendChild(displayDiv);
+}
+
 const userWeatherListener = () => {
   const button = document.querySelector('button');
   const input = document.querySelector('input');
@@ -52,6 +61,7 @@ const userWeatherListener = () => {
 
     } catch(err) {
       console.error(err) 
+      renderError();
     }
   })
 }
