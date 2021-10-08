@@ -5,6 +5,7 @@ A web-app which displays the weather for location entered into search bar. Const
 - JavaScript (ES8)
 - HTML 
 - CSS 
+- NPM
 - Webpack
 - Babel 
 
