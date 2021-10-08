@@ -8,4 +8,6 @@ A web-app which displays the weather for location entered into search bar. Const
 - Webpack
 - Babel 
 
-## 
+## How to use 
+
+Go to this link to view the webapp https://jkcswd.github.io/Weather-App/ 
