@@ -50,7 +50,10 @@ body {
 
   background-color: rgba(255, 255, 255, 0.8);
 
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
  }
 
  .content { 
@@ -58,13 +61,15 @@ body {
    padding: 10px;
    border-radius: 20px;
 
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+
    font-size: 20px;
 
-   transition: 0.3s;
+   transition: 0.1s;
  }
 
  .content:hover {
-   scale: 1.05;
+   scale: 1.01;
  }
 
  .display {
@@ -76,8 +81,20 @@ body {
  .search input {
    border-radius: 10px;
    padding: 5px;
+
+   background-color: whitesmoke;
  }
 
  .search input:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);;
+ }
+
+ .search button{
+  border-radius: 10px;
+  padding: 5px;
+
+  background-color: whitesmoke;
+ }
+ .search button:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);;
  }
