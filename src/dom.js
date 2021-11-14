@@ -26,13 +26,13 @@ const renderDisplay = (processedData) => {
   displayDiv.innerHTML = `
   <i class="wi ${iconLookupTable[processedData.main]}" style="font-size:100px"></i>
   <p>${processedData.description}<p/>
-  <p>Temperature: ${processedData.temp}<p/>
-  <p>Feels like: ${processedData.feelTemp}<p/>
-  <p>High: ${processedData.maxTemp}<p/>
-  <p>Low: ${processedData.minTemp}<p/>
-  <p>Pressure: ${processedData.pressure}<p/>
-  <p>Humidity: ${processedData.humidity}<p/>
-  <p>Wind Speed: ${processedData.windSpeed}<p/>
+  <p>Temperature: ${processedData.temp}°C<p/>
+  <p>Feels like: ${processedData.feelTemp}°C<p/>
+  <p>High: ${processedData.maxTemp}°C<p/>
+  <p>Low: ${processedData.minTemp}°C<p/>
+  <p>Pressure: ${processedData.pressure}hPA<p/>
+  <p>Humidity: ${processedData.humidity}%<p/>
+  <p>Wind Speed: ${processedData.windSpeed}m/s<p/>
   `;
   display.appendChild(displayDiv);
 }
@@ -52,7 +52,7 @@ const userWeatherListener = () => {
 
   button.addEventListener('click', async (e) => {
     try {
-      e.preventDefault();//allows async code to execute as default behaviour 
+      e.preventDefault();// allows async code to execute as default behaviour makes it not work
 
       const apiData = await fetchWeatherData(input.value);
       const processedData = await weatherDataProcess(apiData);
